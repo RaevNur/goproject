@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/artist.css">
+    <link rel="stylesheet" href="/assets/css/buttons.css">
+    <link rel="icon" href="/assets/icons/album.svg">
+    <title>groupie-tracker</title>
+</head>
+
+<body>
+    <!-- Page -->
+    <div id="page">
+        <div class="header">
+            <h2>groupie-tracker</h2>
+            <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank"
+                    class="textlink text--white">Dias1c</a> |
+                Git Project <a href="https://git.01.alem.school/Dias1c/groupie-tracker" target="_blank"
+                    class="textlink text--white">here</a></p>
+        </div>
+        <div class="container container--divided">
+            <!-- FILTER -->
+            <div class="container_filter" id="container_filter">
+                <div class="filter-top">
+                    <h2 class="filter-title">Filter</h2>
+                    <button class="btn btn--gray" id="btn_SubmitFilter">
+                        Submit
+                    </button>
+                </div>
+                <div class="filter_category">
+                    <div class="input-group">
+                        <label class="label">Search</label>
+                        <div>
+                            <input class="textbox w100" id="tb_SearchBar" list="dl_SearchBar" type="text" name="text"
+                                placeholder="Artist" />
+                            <datalist id="dl_SearchBar">
+                                <!-- <option label="Name - Type" value="Name"> -->
+                            </datalist>
+                        </div>
+                    </div>
+                    <!-- CITIES -->
+                    <label class="label">
+                        <input class="checkbox_input" type="checkbox" id="cb_Cities" />
+                        Cities
+                    </label>
+                    <div class="input-group" id="b_Cities">
+                    </div>
+                    <!-- CREATION DATE -->
+                    <label class="label">
+                        <input class="checkbox_input" type="checkbox" id="cb_CreationDate" />
+                        Creation Date
+                    </label>
+                    <div class="input-group" id="b_CreationDate">
+                        <div class="side2">
+                            <input class="textbox w40" type="number" id="tb_CreationDateFrom" placeholder="1900" value="1600"/>
+                            <input class="textbox w40" type="number" id="tb_CreationDateBefore" placeholder="2021" value="2021"/>
+                        </div>
+                    </div>
+                    <!-- FIRST ALBUM DATE -->
+                    <label class="label">
+                        <input class="checkbox_input" type="checkbox" id="cb_FirstAlbumDate" />
+                        First Album Date
+                    </label>
+                    <div class="input-group" id="b_FirstAlbumDate">
+                        <input class="textbox w100 mgb" type="text" id="tb_FirstAlbumDateFrom" placeholder="YYYY-MM-DD"
+                            value="" maxlength="10" />
+                        <input class="textbox w100" type="text" id="tb_FirstAlbumDateBefore" placeholder="YYYY-MM-DD"
+                            value="" maxlength="10" />
+                    </div>
+                    <!-- COUNT MEMBERS -->
+                    <label class="label">
+                        <input class="checkbox_input" type="checkbox" id="cb_CountMembers" />
+                        Count Members
+                    </label>
+                    <div class="input-group" id="b_CountMembers">
+                        <div class="side2">
+                            <input class="textbox w40" type="number" placeholder="0" id="tb_CountMembersFrom" />
+                            <input class="textbox w40" type="number" placeholder="10" id="tb_CountMembersBefore" />
+                        </div>
+                    </div>
+                    <div id="b_FilterError"></div>
+                </div>
+            </div>
+            <!-- PRODUCTS -->
+            <div class="container_cards">
+                <div class="cards" id="Artists">
+                    <!-- Here is Cards -->
+                </div>
+            </div>
+            <!-- END PRODUCTS/ -->
+        </div>
+        <div class="footer">
+            <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank"
+                    class="textlink text--white">Dias1c</a></p>
+            <p>
+                Git Project <a href="https://git.01.alem.school/Dias1c/groupie-tracker" target="_blank"
+                    class="textlink text--white">here</a></p>
+        </div>
+    </div>
+
+    <!-- POPUP WINDOW -->
+    <div id="window">
+        <div class="module">
+            <div class="module_info_top">
+                <h2 class="title" id="ArtistName">{{ .Name }}
+                </h2>
+                <btn class="btn btn--submit" onclick="HideArtistWindow()">Close</btn>
+            </div>
+            <hr>
+            <div class="module_intro">
+                <div class="module_intro_left">
+                    <img src="" alt="photo" id="ArtistImage" />
+                    <div class="group-info" id="ArtistMembers">
+                        <label class="label">Members</label>
+                        <p>MemberName</p>
+                    </div>
+                </div>
+                <div class="module_intro_right">
+                    <div class="group-info">
+                        <label class="label">Creation Date</label>
+                        <p id="ArtistCreationDate"></p>
+                    </div>
+                    <div class="group-info">
+                        <label class="label">First Album</label>
+                        <p id="ArtistFirstAlbum"></p>
+                    </div>
+                    <div class="group-info">
+                        <label class="label">Concerts</label>
+                        <hr>
+                        <!-- adaptive-container -->
+                        <div class="adaptive-container" id="ArtistConcerts">
+                            <div class="group-info">
+                                <label class="sublabel">Location Name</label>
+                                <p>Date</p>
+                            </div>
+                        </div>
+                        <!-- ./adaptive-container -->
+                    </div>
+                </div>
+            </div>
+            <div class="group-info">
+                <label class="label">Concert Locations</label>
+                <div class="module_map" id="map"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END POPUP WINDOW -->
+
+    <!-- Scripts -->
+    <script src="/assets/scripts/index.js"></script>
+    <script src="assets/scripts/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClp0He8MpMVMaSxh7WU0gRHmTi4j2PB5U&callback=myMap"></script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+.post-layout, .answer-layout {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content;
+}
+
+.post-layout .vote-cell, .answer-layout .vote-cell {
+    margin-right: var(--page-padding);
+    min-width: 30px;
+}
+
+.post-cell {
+    width: 100%;
+    /* FOR PRE ELEMENT */
+    min-width: 0;
+}
+
+.post-text {
+    width: 100%;
+    font-size: inherit;
+    margin-bottom: 12px;
+}
+
+.post-star {
+    width: 70%;
+}
+
+
+.question-marks-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.question-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-bottom: 10px;
+}
+
+.question-user {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-left: auto;
+}
+                                
+
+                                
+.user-avatar {
+                                
+    overflow: hidden;
+                                
+    min-width: 38px;
+    max-width: 38px;
+    width: 100%;
+    min-height: 38px;
+    max-height: 38px;
+    height: 100%;
+    margin-right: 5px;
+    border-radius: var(--border-radius);
+}
+
+.user-avatar>img {
+    width: 100%;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-action-time {
+    color: var(--gray-700);
+}
+
+.comments {
+    margin-top: 20px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.comment-layout {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content;
+
+    border-bottom: 1px solid var(--gray-200);
+    padding: calc(var(--page-padding) / 2) 0;
+}
+
+.comment-layout .vote-cell {
+    margin-right: var(--page-padding);
+    width: auto;
+}
+
+.comment-text {
+    width: 100%;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    font-size: inherit;
+}
+
+.comment-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.answers-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    margin: var(--page-padding) 0;
+}
+
+.answer-layout{
+    padding: var(--page-padding) 0;
+    border-bottom: 1px solid var(--gray-300);
+}

@@ -1,0 +1,222 @@
+{{ define "pg-users" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Users</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/users.css">
+    <!-- <link rel="stylesheet" href="static/css/questions.css"> -->
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        {{ template "md-header-burger-of" }}
+        <!-- CONTENT -->
+        <div class="container__inner">
+            <div class="main-sidebar-container" data-hide-on-sm>
+                {{ template "md-sidebar-menu-nav" }}
+            </div>
+            <div class="container-content">
+                <div class="content">
+                    <div class="main-content">
+                        <div class="content-intro">
+                            <div class="content-intro-group">
+                                <h1 class="main-title">Users</h1>
+                            </div>
+                            <div class="content-intro-group">
+                                <div class="search-container mb-12">
+                                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="10" cy="10" r="7" />
+                                        <line x1="21" y1="21" x2="15" y2="15" />
+                                    </svg>
+                                    <input class="search-input" type="text" placeholder="Username..." />
+                                </div>
+
+                                <div class="content-filter-block mb-12 ml-auto">
+                                    <div class="btn-group">
+                                        <input type="radio" name="sort" value="Old" class="d-none" id="rb_sortOld"
+                                            checked>
+                                        <label class="btn btn--normal" for="rb_sortOld">Old</label>
+                                        <input type="radio" name="sort" value="New" class="d-none" id="rb_sortNew">
+                                        <label class="btn btn--normal" for="rb_sortNew">New</label>
+                                        <input type="radio" name="sort" value="Questions" class="d-none"
+                                            id="rb_sortQuestions">
+                                        <label class="btn btn--normal" for="rb_sortQuestions">Questions</label>
+                                        <input type="radio" name="sort" value="Name" class="d-none" id="rb_sortName">
+                                        <label class="btn btn--normal" for="rb_sortName">Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="users">
+                            <template id="tmpl-user-block">
+                                <div class="user-block">
+                                    <div class="d-flex flex-row mb-rem-half">
+                                        <a class="user-avatar"  id="tmpl-user-block__block-img" href="/user"><img src="" 
+                                                alt="user-avatar" id="tmpl-user-block__img">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="user" id="tmpl-user-block__nickname">Nickname</a>
+                                            <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                    class="relativetime" id="tmpl-user-block__created-time">2021.12.03</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="user-detail-text">Questions: <span id="tmpl-user-block__questions-count">??</span></div>
+                                    <div class="user-detail-text">Karma: <span id="tmpl-user-block__karma-count">??</span></div>
+                                </div>
+                            </template>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+                            <div class="user-block">
+                                <div class="d-flex flex-row mb-rem-half">
+                                    <a class="user-avatar" href="user"><img src="static/img/avatar.jpeg"
+                                            alt="user-avatar">
+                                    </a>
+                                    <div class="user-details">
+                                        <a class="linked-text" href="user">Dias Kappassov</a>
+                                        <div class="user-created-time">Created <span title="2021.12.03 20:20:52"
+                                                class="relativetime">2021.12.03</span></div>
+                                    </div>
+                                </div>
+                                <div class="user-detail-text">Questions: 10</div>
+                                <div class="user-detail-text">Votes: 10</div>
+                            </div>
+
+                        </div>
+                        <!-- PAGINATION -->
+                        <div class="paginaton-block mw-max-content ml-auto">
+                            <div class="btn btn--small">prev</div>
+                            <div class="btn btn--small">1</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">3</div>
+                            <div class="btn btn--small">4</div>
+                            <div class="btn btn--small btn--selected">5</div>
+                            <div class="btn btn--small">6</div>
+                            <div class="btn btn--small">7</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">2021</div>
+                            <div class="btn btn--small">next</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        {{ template "md-footer" }}
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+    <script src="static/js/users.js"></script>
+</body>
+
+</html>
+{{ end }}

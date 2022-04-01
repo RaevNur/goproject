@@ -1,0 +1,69 @@
+{{ define "pg-signup" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Sign Up</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/auth.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        {{ template "md-header-burger-on" }}
+        <!-- CONTENT -->
+        <div class="w-100 h-100vh d-flex flex-column flex-center">
+            <div class="block-auth">
+                <a class="block-auth__logo-btn" href="/">
+                    <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                        <circle cx="12" cy="12" r="7" />
+                    </svg>
+                </a>
+                <button class="btn btn--normal btn--secondary-v2 border-radius-x2 w-100 mb-12">Sign up with
+                    Google</button>
+                <form class="auth border-radius-x2 mb-24">
+                    <div class="d-flex justify-space-between mb-6">
+                        <b class="fsz-inherit">Nickname</b>
+                    </div>
+                    <div class="textblock__input mb-12">
+                        <input type="nickname" name="email" id="">
+                    </div>
+                    <div class="d-flex justify-space-between mb-6">
+                        <b class="fsz-inherit">Email</b>
+                    </div>
+                    <div class="textblock__input mb-12">
+                        <input type="email" name="email" id="">
+                    </div>
+                    <div class="d-flex justify-space-between mb-6">
+                        <b class="fsz-inherit">Password</b>
+                    </div>
+                    <div class="textblock__input mb-12">
+                        <input type="text" name="password" id="">
+                    </div>
+                    <button class="btn btn--normal btn--secondary-v1 w-100">Sign up</button>
+                </form>
+                <p>Already have an account? <a href="/login" class="fnt-link">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+    <script src="static/js/default.js"></script>
+</body>
+
+</html>
+{{ end }}

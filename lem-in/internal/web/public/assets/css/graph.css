@@ -1,0 +1,18 @@
+circle{
+    stroke:#f9f9f9;
+    stroke-width:3px;
+    transition-timing-function: ease-out;
+}
+
+text {
+}
+
+
+line{
+    stroke:#dfdfdf;
+}
+
+g {
+    outline: solid 1px #ebebeb;
+    outline-offset: 5px;
+}

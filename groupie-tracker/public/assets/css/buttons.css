@@ -1,0 +1,55 @@
+/* BUTTONS */
+
+button {
+    outline: none;
+    background: 0 0;
+    border: none;
+}
+
+.btn {
+    display: block;
+    width: max-content;
+    height: max-content;
+    padding: 10px 40px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.btn:active{
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px inset;
+}
+
+.btn--small {
+    line-height: 30px;
+    padding: 0 15px;
+}
+
+.btn--gray {
+    background: #525252;
+}
+
+.btn--gray:hover {
+    background: #292929;
+}
+
+.btn--submit {
+    background: #c5245a;
+}
+
+.btn--submit:hover {
+    background: #961c45;
+}

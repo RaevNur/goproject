@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/buttons.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <title>🖹 ASCII-ART</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="menupanel">
+            <div class="menupanel_intro">
+                <h1 class="title">ASCII-ART</h1>
+                <form action="/ascii-art" class="inputform" method="POST">
+                    <div class="params">
+                        <p class="text">Font:</p>
+                        <select class="selector" name="font">
+                            {{ range $key, $value := .AvailableFonts }}
+                            <option class="option" value={{ $key }} {{if eq $key $.Font }} selected="selected" {{end}}>
+                                {{ $key }}</option>
+                            {{ end }}
+                        </select>
+                    </div>
+                    <textarea name="input" class="inputpanel" placeholder="Input Text">{{.Input}}</textarea>
+                    <div class="buttons">
+                        <button class="btn" type="submit" name="submit" value="show">Show</button>
+                        <button class="btn" type="submit" name="submit" value="download">Download</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="resultpanel">
+            <h2 class="title">Art Result</h2>
+            <hr class="line">
+            <div class="artpanel">
+                <pre name="asciiart">{{.Result}}</pre>
+            </div>
+            <hr class="line">
+            <div class="footer">
+                <p class="text">Designed By <a href="https://github.com/Dias1c" target="_blank"
+                        class="textlink">Dias1c</a> | Git
+                    Project <a href="https://git.01.alem.school/Dias1c/ascii-art-web" target="_blank"
+                        class="textlink">here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Questions</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/questions.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <header class="container header">
+            <label class="header__menu-btn" id="cb_HeaderMenu">
+                <input type="checkbox" />
+                <span></span>
+            </label>
+            <div class="header__menu-block d-none-on-mt-sm" id="b_HeaderMenu">
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
+                </div>
+            </div>
+
+            <a class="header__logo-btn" href="/">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                    <circle cx="12" cy="12" r="7" />
+                </svg>
+                <h2 class="header__logo-btn-text">Forum</h2>
+            </a>
+            <a class="header-btn" href="#">About</a>
+            <!-- header SEARCH -->
+            <label type="checkbox" class="search-btn" id="cb_HeaderSearch" data-show-on-md>
+                <input type="checkbox" />
+                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#bdb8b8" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+            </label>
+            <form class="header__search-block" id="b_HeaderSearch">
+                <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
+                <div class="header__search">
+                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                    <input class="header__search-input" type="text" placeholder="Search..." />
+
+                    <!-- TOOLTIP -->
+                    <div class="header__search-hint">
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">[tag]</span>
+                            <span>search within a tag</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">answers:0</span>
+                            <span>unanswered questions</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">"has words"</span>
+                            <span>exact phrase</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">score:2</span>
+                            <span>posts with a 2+ score</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">user:id</span>
+                            <span>search by author</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">isaccepted:yes</span>
+                            <span>search within status</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- header BTNS -->
+            <div class="header__auth-btns">
+                <a href="login.html" class="btn btn--normal btn--secondary-v2 text-no-wrap">Log in</a>
+                <a href="signup.html" class="btn btn--normal btn--secondary-v1 text-no-wrap">Sign up</a>
+            </div>
+        </header>
+        <!-- CONTENT -->
+        <div class="container__inner">
+            <div class="main-sidebar-container" data-hide-on-sm>
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
+                </div>
+            </div>
+            <div class="container-content">
+                <div class="content">
+                    <div class="main-content">
+                        <div class="content-intro">
+                            <div class="content-intro-group">
+                                <h1 class="main-title">All Questions</h1>
+                                <button class="btn btn--normal btn--secondary-v1">Ask Question</button>
+                            </div>
+                            <div class="content-intro-group">
+                                <p class="main-subtitle">10,000,000 questions</p>
+                                <div class="content-filter-block">
+                                    <div class="content-filter"></div>
+                                    <label class="btn btn--normal btn--secondary-v2 cb_QuestionsFilter"
+                                        id="cb_QuestionsFilter"> <input type="checkbox"> Filter</label>
+                                </div>
+                            </div>
+                            <form class="question-filter-block" action="/question" method="GET" id="b_QuestionsFilter">
+                                <div class="question-filter-sublock">
+                                    <div class="question-filter-title">Filter By</div>
+                                    <div class="checkbox">
+                                        <input class="checkbox__input" type="checkbox" name="filter" value="NotAnswered"
+                                            id="cb_NotAnswered"></input>
+                                        <label class="checkbox__label" for="cb_NotAnswered">Not answered</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input class="checkbox__input" type="checkbox" name="filter"
+                                            value="NotAcceptedAnswered" id="cb_NotAcceptedAnswered"></input>
+                                        <label class="checkbox__label" for="cb_NotAcceptedAnswered">Not accepted
+                                            answer</label>
+                                    </div>
+                                </div>
+                                <div class="question-filter-sublock">
+                                    <div class="question-filter-title">Sort By</div>
+                                    <!-- My Style -->
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" name="sort" value="Data"
+                                            id="rb_Data"></input>
+                                        <label class="radio__label" for="rb_Data">Newest</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" name="sort" value="Votes"
+                                            id="rb_Votes"></input>
+                                        <label class="radio__label" for="rb_Votes">Most Votes</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input class="radio__input" type="radio" name="sort" value="Answers"
+                                            id="rb_Answers"></input>
+                                        <label class="radio__label" for="rb_Answers">Not answered</label>
+                                    </div>
+
+                                </div>
+                                <div class="question-filter-sublock">
+                                    <div class="question-filter-title">Tagged With</div>
+                                    <!-- <textarea class="question-filter-textarea" name="tags" id="tb_QuestionsTags"></textarea> -->
+                                    <input type="text" name="tags" id="tb_Tags" style="display: none;">
+                                    <div class="textblock__input" id="b_TagEditor">
+
+                                    </div>
+                                </div>
+                                <div class="question-filter-footer">
+                                    <button class="btn btn--normal btn--secondary-v1">Apply Filter</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="questions">
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">0</span>votes
+                                    </div>
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit"> 0</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>how to code
+                                        if this element activated the other
+                                        element changes with html and css?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know
+                                        if
+                                        it's possible to click on an element and
+                                        then change another element only using Html and CSS and if it is then how. some
+                                        thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                        dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id
+                                        esse
+                                        veniam illo assumenda rem?</div>
+                                    <div class="question-marks-block">
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">golang</a>
+
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="user.html"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="user.html">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">1 mins ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">-3</span>votes
+                                    </div>
+                                    <div class="question-stat question-stat-answered">
+                                        <span class="question-stat-digit">1</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>Lorem ipsum
+                                        dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos
+                                        tempore
+                                        cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio
+                                        eos
+                                        vitae error nisi omnis doloribus exercitationem?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum
+                                        dolor
+                                        sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem
+                                        tempora
+                                        error enim, laborum commodi quos molestias quo id quas totam dicta sunt
+                                        laudantium
+                                        reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora
+                                        facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum
+                                        corporis maxime.</div>
+                                    <div class="question-marks-block">
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">php</a>
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">c#</a>
+                                            <a href="#" class="btn-tag">golang</a>
+                                            <a href="#" class="btn-tag">js</a>
+                                            <a href="#" class="btn-tag">javascript</a>
+                                            <a href="#" class="btn-tag">brainfuck</a>
+                                            <a href="#" class="btn-tag">python</a>
+                                            <a href="#" class="btn-tag">xml</a>
+                                            <a href="#" class="btn-tag">mariadb</a>
+                                            <a href="#" class="btn-tag">mssql</a>
+                                            <a href="#" class="btn-tag">mysql</a>
+                                            <a href="#" class="btn-tag">oracle</a>
+                                            <a href="#" class="btn-tag">p-sql</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">3 mins ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">5</span>votes
+                                    </div>
+                                    <div class="question-stat question-stat-answered-accepted">
+                                        <span class="question-stat-digit">1</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>Lorem ipsum
+                                        dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos
+                                        tempore
+                                        cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio
+                                        eos
+                                        vitae error nisi omnis doloribus exercitationem?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum
+                                        dolor
+                                        sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem
+                                        tempora
+                                        error enim, laborum commodi quos molestias quo id quas totam dicta sunt
+                                        laudantium
+                                        reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora
+                                        facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum
+                                        corporis maxime.</div>
+                                    <div class="question-marks-block">
+
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">education</a>
+                                            <a href="#" class="btn-tag">alem</a>
+                                            <a href="#" class="btn-tag">school</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">56 mins ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">0</span>votes
+                                    </div>
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit"> 0</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>how to code
+                                        if this element activated the other
+                                        element changes with html and css?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know
+                                        if
+                                        it's possible to click on an element and
+                                        then change another element only using Html and CSS and if it is then how. some
+                                        thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                        dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id
+                                        esse
+                                        veniam illo assumenda rem?</div>
+                                    <div class="question-marks-block">
+
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">golang</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">6 hours ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">0</span>votes
+                                    </div>
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit"> 0</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>how to code
+                                        if this element activated the other
+                                        element changes with html and css?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know
+                                        if
+                                        it's possible to click on an element and
+                                        then change another element only using Html and CSS and if it is then how. some
+                                        thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                        dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id
+                                        esse
+                                        veniam illo assumenda rem?</div>
+                                    <div class="question-marks-block">
+
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">golang</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">1 month ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">0</span>votes
+                                    </div>
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit"> 0</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>how to code
+                                        if this element activated the other
+                                        element changes with html and css?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know
+                                        if
+                                        it's possible to click on an element and
+                                        then change another element only using Html and CSS and if it is then how. some
+                                        thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                        dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id
+                                        esse
+                                        veniam illo assumenda rem?</div>
+                                    <div class="question-marks-block">
+
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">golang</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">2021.12.03 20:20:52</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">0</span>votes
+                                    </div>
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit"> 0</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>how to code
+                                        if this element activated the other
+                                        element changes with html and css?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know
+                                        if
+                                        it's possible to click on an element and
+                                        then change another element only using Html and CSS and if it is then how. some
+                                        thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                        dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id
+                                        esse
+                                        veniam illo assumenda rem?</div>
+                                    <div class="question-marks-block">
+
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">golang</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">2021.12.03</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PAGINATION -->
+                        <div class="paginaton-block ml-auto">
+                            <div class="btn btn--small">prev</div>
+                            <div class="btn btn--small">1</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">3</div>
+                            <div class="btn btn--small">4</div>
+                            <div class="btn btn--small btn--selected">5</div>
+                            <div class="btn btn--small">6</div>
+                            <div class="btn btn--small">7</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">2021</div>
+                            <div class="btn btn--small">next</div>
+                        </div>
+                    </div>
+                    <div class="content-sidebar">
+                        <div class="content-sidebar-subblock">
+                            <h4 class="content-sidebar-title">Related Tags</h4>
+                            <div class="tag-line"><a href="#" class="btn-tag">html</a><span>× 51</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">css</a><span>× 50</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">golang</a><span>× 30</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">c#</a><span>× 19</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">alem</a><span>× 1</span></div>
+                        </div>
+                        <div class="content-sidebar-subblock">
+                            <h4 class="content-sidebar-title">Hot Questions</h4>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Lorem
+                                ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus consequatur
+                                consectetur error hic in, officia tempore placeat magnam perspiciatis aut vitae animi
+                                nihil,
+                                harum omnis iure explicabo facere voluptates.</a>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Repellat, libero accusantium veniam incidunt corporis laudantium
+                                nostrum tempora fugiat sequi unde aliquam delectus ducimus nobis voluptate sed excepturi
+                                quaerat neque. Nemo.</a>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. At, quia porro. Praesentium odio unde
+                                officia odit incidunt voluptate in totam. Nemo officia facere tempore quidem,
+                                voluptatibus
+                                unde voluptate cupiditate? Consequatur.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="container footer">
+            <p class="footer-text">2021 | by <a class="footer-text-link" target="_blank"
+                    href="https://github.com/Dias1c">Dias1c</a> & <a class="footer-text-link" target="_blank"
+                    href="https://github.com/RaevNur">nrblzn</a> | Project <a class="footer-text-link" target="_blank"
+                    href="#">here</a></p>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+    <script src="static/js/questions.js"></script>
+    <script src="static/js/default.js"></script>
+    <script>
+        const tagEditor = new TagEditor({
+            BlockSelectorName: "#b_TagEditor",
+            TextBlockSelectorName: "#tb_Tags",
+        });
+    </script>
+</body>
+
+</html>

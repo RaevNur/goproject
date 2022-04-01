@@ -1,0 +1,16 @@
+.question__editor-text {
+    min-height: 500px;
+    overflow-y: auto;
+    resize: vertical;
+    font-family: monospace, monospace;
+}
+
+.question__preview-title {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-300);
+}
+
+.question__preview-tags {}
+
+.question__preview-text {}

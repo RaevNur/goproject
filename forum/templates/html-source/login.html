@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Questions</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/auth.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <header class="container header">
+            <label class="header__menu-btn d-flex" id="cb_HeaderMenu">
+                <input type="checkbox" />
+                <span></span>
+            </label>
+            <div class="header__menu-block" id="b_HeaderMenu">
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
+                </div>
+            </div>
+
+            <a class="header__logo-btn" href="/">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                    <circle cx="12" cy="12" r="7" />
+                </svg>
+                <h2 class="header__logo-btn-text">Forum</h2>
+            </a>
+            <a class="header-btn" href="#">About</a>
+            <!-- header SEARCH -->
+            <label type="checkbox" class="search-btn" id="cb_HeaderSearch" data-show-on-md>
+                <input type="checkbox" />
+                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#bdb8b8" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+            </label>
+            <form class="header__search-block" id="b_HeaderSearch">
+                <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
+                <div class="header__search">
+                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                    <input class="header__search-input" type="text" placeholder="Search..." />
+
+                    <!-- TOOLTIP -->
+                    <div class="header__search-hint">
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">[tag]</span>
+                            <span>search within a tag</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">answers:0</span>
+                            <span>unanswered questions</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">"has words"</span>
+                            <span>exact phrase</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">score:2</span>
+                            <span>posts with a 2+ score</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">user:id</span>
+                            <span>search by author</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">isaccepted:yes</span>
+                            <span>search within status</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- header BTNS -->
+            <div class="header__auth-btns">
+                <a href="login.html" class="btn btn--normal btn--secondary-v2 text-no-wrap">Log in</a>
+                <a href="signup.html" class="btn btn--normal btn--secondary-v1 text-no-wrap">Sign up</a>
+            </div>
+        </header>
+        <!-- CONTENT -->
+        <div class="w-100 h-100vh d-flex flex-column flex-center">
+            <div class="block-auth">
+                <a class="block-auth__logo-btn" href="/">
+                    <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                        <circle cx="12" cy="12" r="7" />
+                    </svg>
+                </a>
+                <button class="btn btn--normal btn--secondary-v2 border-radius-x2 w-100 mb-12">Log in with Google</button>
+                <form class="auth border-radius-x2 mb-24">
+                    <div class="d-flex justify-space-between mb-6">
+                        <b class="fsz-inherit">Email</b>
+                    </div>
+                    <div class="textblock__input mb-12">
+                        <input type="email" name="email" id="">
+                    </div>
+                    <div class="d-flex justify-space-between mb-6">
+                        <b class="fsz-inherit">Password</b>
+                        <a href="" class="fnt-link">Forgot Password?</a>
+                    </div>
+                    <div class="textblock__input mb-12">
+                        <input type="password" name="password" id="">
+                    </div>
+                    <button class="btn btn--normal btn--secondary-v1 w-100">Log in</button>
+                </form>
+                <p>Don’t have an account? <a href="/signup.html" class="fnt-link">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+    <script src="static/js/default.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+{{ define "pg-tags" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Tags</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/tags.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        {{ template "md-header-burger-of" }}
+        <!-- CONTENT -->
+        <div class="container__inner">
+            <div class="main-sidebar-container" data-hide-on-sm>
+                {{ template "md-sidebar-menu-nav" }}
+            </div>
+            <div class="container-content">
+
+                <div class="content">
+                    <div class="main-content">
+                        <div class="content-intro">
+                            <div class="content-intro-group">
+                                <h1 class="main-title">Tags</h1>
+                            </div>
+                            <div class="content-intro-group mb-24">
+                                <p class="main-text" style="max-width: 50rem;">A tag is a keyword or label that
+                                    categorizes
+                                    your question with other, similar questions. Using the right tags makes it easier
+                                    for
+                                    others to find and answer your question.</p>
+                            </div>
+                            <div class="content-intro-group">
+                                <div class="search-container mb-12">
+                                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="10" cy="10" r="7" />
+                                        <line x1="21" y1="21" x2="15" y2="15" />
+                                    </svg>
+                                    <input class="search-input" type="text" placeholder="Tag name..." />
+                                </div>
+
+                                <div class="content-filter-block mb-12 ml-auto">
+                                    <div class="btn-group">
+                                        <input type="radio" name="sort" value="Popular" class="d-none"
+                                            id="rb_sortPopular" checked>
+                                        <label class="btn btn--normal" for="rb_sortPopular">Popular</label>
+                                        <input type="radio" name="sort" value="Name" class="d-none" id="rb_sortName">
+                                        <label class="btn btn--normal" for="rb_sortName">Name</label>
+                                        <input type="radio" name="sort" value="New" class="d-none" id="rb_sortNew">
+                                        <label class="btn btn--normal" for="rb_sortNew">New</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tags">
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                            <div class="tag-block">
+                                <div class="mb-12"><a href="" class="btn-tag">html</a></div>
+                                <div class="d-flex flex-row justify-space-between"><span class="tag-block-subtitle">1
+                                        question</span><span class="tag-block-subtitle">Created 1 hours ago</span></div>
+                            </div>
+                        </div>
+
+                        <!-- PAGINATION -->
+                        <div class="paginaton-block mw-max-content ml-auto">
+                            <div class="btn btn--small">prev</div>
+                            <div class="btn btn--small">1</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">3</div>
+                            <div class="btn btn--small">4</div>
+                            <div class="btn btn--small btn--selected">5</div>
+                            <div class="btn btn--small">6</div>
+                            <div class="btn btn--small">7</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">2021</div>
+                            <div class="btn btn--small">next</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        {{ template "md-footer" }}
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+</body>
+
+</html>
+{{ end }}

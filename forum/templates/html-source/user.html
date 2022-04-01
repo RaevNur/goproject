@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Questions</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/user.css">
+    <link rel="stylesheet" href="static/css/questions.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <header class="container header">
+            <label class="header__menu-btn" id="cb_HeaderMenu">
+                <input type="checkbox" />
+                <span></span>
+            </label>
+            <div class="header__menu-block d-none-on-mt-sm" id="b_HeaderMenu">
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html">Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html" data-nav-selected>Users</a>
+                </div>
+            </div>
+
+            <a class="header__logo-btn" href="/">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                    <circle cx="12" cy="12" r="7" />
+                </svg>
+                <h2 class="header__logo-btn-text">Forum</h2>
+            </a>
+            <a class="header-btn" href="#">About</a>
+            <!-- header SEARCH -->
+            <label type="checkbox" class="search-btn" id="cb_HeaderSearch" data-show-on-md>
+                <input type="checkbox" />
+                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#bdb8b8" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+            </label>
+            <form class="header__search-block" id="b_HeaderSearch">
+                <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
+                <div class="header__search">
+                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                    <input class="header__search-input" type="text" placeholder="Search..." />
+
+                    <!-- TOOLTIP -->
+                    <div class="header__search-hint">
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">[tag]</span>
+                            <span>search within a tag</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">answers:0</span>
+                            <span>unanswered questions</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">"has words"</span>
+                            <span>exact phrase</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">score:2</span>
+                            <span>posts with a 2+ score</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">user:id</span>
+                            <span>search by author</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">isaccepted:yes</span>
+                            <span>search within status</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- header BTNS -->
+            <div class="header__auth-btns">
+                <a href="login.html" class="btn btn--normal btn--secondary-v2 text-no-wrap">Log in</a>
+                <a href="signup.html" class="btn btn--normal btn--secondary-v1 text-no-wrap">Sign up</a>
+            </div>
+        </header>
+        <!-- CONTENT -->
+        <div class="container__inner">
+            <div class="main-sidebar-container" data-hide-on-sm>
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html">Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html" data-nav-selected>Users</a>
+                </div>
+            </div>
+            <div class="container-content">
+                <div class="content">
+                    <div class="main-content">
+                        <div class="user">
+                            <div class="user-photo">
+                                <!-- <img src="https://via.placeholder.com/500" alt=""> -->
+                                <img src="static/img/avatar.jpeg" alt="">
+                            </div>
+
+                            <div class="user-details">
+
+                                <h1 class="main-title mb-12">Dias1c</h1>
+
+                                <div class="user-detail-containers">
+
+                                    <div class="user-detail-container">
+                                        <p class="fnt-size-120">2019 june 15</p>
+                                        <span class="fnt-size-100 fnt-gray">Registered</span>
+                                    </div>
+
+                                    <div class="user-detail-container">
+                                        <p class="fnt-size-120"> 2</p>
+                                        <span class="fnt-size-100 fnt-gray">Questions</span>
+                                    </div>
+
+
+                                    <div class="user-detail-container">
+                                        <p class="fnt-size-120"> 10</p>
+                                        <span class="fnt-size-100 fnt-gray">Support</span>
+                                    </div>
+
+                                    <div class="user-detail-container">
+                                        <p class="fnt-size-120">3</p>
+                                        <span class="fnt-size-100 fnt-gray">Answers</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="questions">
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">0</span>votes
+                                    </div>
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit"> 0</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>how to code
+                                        if this element activated the other
+                                        element changes with html and css?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>I want to know
+                                        if
+                                        it's possible to click on an element and
+                                        then change another element only using Html and CSS and if it is then how. some
+                                        thing like this ( btw this code doesn't work ). Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. Modi magnam, molestias, eveniet soluta adipisci
+                                        dolorem inventore cupiditate nisi eum a reiciendis alias cumque deleniti. Id
+                                        esse
+                                        veniam illo assumenda rem?</div>
+                                    <div class="question-marks-block">
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">html</a>
+                                            <a href="#" class="btn-tag">css</a>
+                                            <a href="#" class="btn-tag">golang</a>
+
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="user.html"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="user.html">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">1 mins ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- QUESTION POST -->
+                            <div class="question-post">
+                                <div class="question-stats">
+                                    <div class="question-stat">
+                                        <span class="question-stat-digit">5</span>votes
+                                    </div>
+                                    <div class="question-stat question-stat-answered-accepted">
+                                        <span class="question-stat-digit">1</span>answers
+                                    </div>
+                                </div>
+                                <div class="question-summary">
+                                    <a href="question.html" class="question-title linked-text" data-limit-lines-on
+                                        data-limit-lines='2'>Lorem ipsum
+                                        dolor sit amet, consectetur adipisicing elit. Numquam aspernatur quasi quos
+                                        tempore
+                                        cupiditate vel consequuntur veritatis unde, a possimus nihil recusandae optio
+                                        eos
+                                        vitae error nisi omnis doloribus exercitationem?</a>
+                                    <div class="question-text" data-limit-lines-on data-limit-lines='4'>Lorem ipsum
+                                        dolor
+                                        sit amet consectetur adipisicing elit. Delectus aliquid odit exercitationem
+                                        tempora
+                                        error enim, laborum commodi quos molestias quo id quas totam dicta sunt
+                                        laudantium
+                                        reiciendis perspiciatis molestiae. Modi. Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Voluptate mollitia quis assumenda non fugit cupiditate tempora
+                                        facilis natus sit unde aliquam pariatur eveniet rerum quo iure adipisci, laborum
+                                        corporis maxime.</div>
+                                    <div class="question-marks-block">
+
+                                        <div class="question-tags">
+                                            <a href="#" class="btn-tag">education</a>
+                                            <a href="#" class="btn-tag">alem</a>
+                                            <a href="#" class="btn-tag">school</a>
+                                        </div>
+                                        <div class="question-user">
+                                            <a class="user-avatar" href="#user-href"><img src="static/img/avatar.jpeg"
+                                                    alt="user-avatar">
+                                            </a>
+                                            <div class="user-details">
+                                                <a class="linked-text" href="#user-href">Dias Kappassov</a>
+                                                <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                        class="relativetime">56 mins ago</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PAGINATION -->
+                        <div class="paginaton-block ml-auto">
+                            <div class="btn btn--small btn--selected">1</div>
+                            <div class="btn btn--small">3</div>
+                            <div class="btn btn--small">4</div>
+                            <div class="pagination-dots">...</div>
+                            <div class="btn btn--small">2021</div>
+                            <div class="btn btn--small">next</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="container footer">
+            <p class="footer-text">2021 | by <a class="footer-text-link" target="_blank"
+                    href="https://github.com/Dias1c">Dias1c</a> & <a class="footer-text-link" target="_blank"
+                    href="https://github.com/RaevNur">nrblzn</a> | Project <a class="footer-text-link" target="_blank"
+                    href="#">here</a></p>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+</body>
+
+</html>

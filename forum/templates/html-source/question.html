@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- TAB -->
+    <link rel="shortcut icon" href="static/icons/forum.svg" type="image/png">
+    <title>Questions</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/question.css">
+    <link rel="stylesheet" href="static/css/markdown.css">
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <header class="container header">
+            <label class="header__menu-btn" id="cb_HeaderMenu">
+                <input type="checkbox" />
+                <span></span>
+            </label>
+            <div class="header__menu-block d-none-on-mt-sm" id="b_HeaderMenu">
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
+                </div>
+            </div>
+
+            <a class="header__logo-btn" href="/">
+                <svg viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805" />
+                    <circle cx="12" cy="12" r="7" />
+                </svg>
+                <h2 class="header__logo-btn-text">Forum</h2>
+            </a>
+            <a class="header-btn" href="#">About</a>
+            <!-- header SEARCH -->
+            <label type="checkbox" class="search-btn" id="cb_HeaderSearch" data-show-on-md>
+                <input type="checkbox" />
+                <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#bdb8b8" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+            </label>
+            <form class="header__search-block" id="b_HeaderSearch">
+                <p class="header__search-text" data-hide-on-lg>Looking Up?</p>
+                <div class="header__search">
+                    <svg width="44" height="44" viewBox="0 0 24 24" stroke-width="2.5" stroke="#d3cfcf" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                    <input class="header__search-input" type="text" placeholder="Search..." />
+
+                    <!-- TOOLTIP -->
+                    <div class="header__search-hint">
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">[tag]</span>
+                            <span>search within a tag</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">answers:0</span>
+                            <span>unanswered questions</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">"has words"</span>
+                            <span>exact phrase</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">score:2</span>
+                            <span>posts with a 2+ score</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">user:id</span>
+                            <span>search by author</span>
+                        </div>
+                        <div class="header__search-hint-text">
+                            <span class="header__search-hint-text-title">isaccepted:yes</span>
+                            <span>search within status</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- header BTNS -->
+            <div class="header__auth-btns">
+                <a href="login.html" class="btn btn--normal btn--secondary-v2 text-no-wrap">Log in</a>
+                <a href="signup.html" class="btn btn--normal btn--secondary-v1 text-no-wrap">Sign up</a>
+            </div>
+        </header>
+        <!-- CONTENT -->
+        <div class="container__inner">
+            <div class="main-sidebar-container" data-hide-on-sm>
+                <div class="main-sidebar">
+                    <a class="sidebar-nav-link" href="index.html">Home</a>
+                    <p class="sidebar-nav-title">Public</p>
+                    <a class="sidebar-nav-link sub-nav-link" href="questions.html" data-nav-selected>Questions</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="tags.html">Tags</a>
+                    <a class="sidebar-nav-link sub-nav-link" href="users.html">Users</a>
+                </div>
+            </div>
+            <div class="container-content">
+                <div class="container-content__intro">
+                    <div class="content-intro-group">
+                        <h1 class="main-title flex- mb-12">ANSI Color Specific RGB Sequence Bash</h1>
+                        <button class="btn btn--normal btn--secondary-v1 ml-auto align-self-start">Ask Question</button>
+                    </div>
+                    <div class="d-flex flex-row flex-wrap">
+                        <div class="mr-12 mb-6"><span class="fnt-gray">Asked</span> <span>8 years, 8 months ago</span>
+                        </div>
+                        <div class="mr-12 mb-6"><span class="fnt-gray">Active</span> 23 days ago </div>
+                        <div class="mr-12 mb-6"><span class="fnt-gray">Viewed</span> 35k times </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="main-content">
+                        <!-- POST -->
+                        <div class="post-layout">
+                            <div class="vote-cell">
+                                <div class="post-btns-group">
+                                    <button class="btn-nostyle btn-vote active">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1000 1000" style="
+	fill: inherit;
+    stroke: inherit;
+    stroke-width: 100px;" xml:space="preserve">
+                                            <polygon points="500,400 100,800 900,800" />
+                                        </svg>
+                                    </button>
+                                    <div class="vote-text">
+                                        94
+                                    </div>
+                                    <button class="btn-nostyle btn-vote">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1000 1000" style="
+	fill: inherit;
+    stroke: inherit;
+    stroke-width: 100px;" xml:space="preserve">
+                                            <polygon points="500,600 100,200 900,200" />
+                                        </svg>
+                                    </button>
+                                    <button class="btn-nostyle btn-star">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            viewBox="0 0 1000 1000" class="post-star" style="
+	fill: inherit;
+    stroke: inherit;
+    " xml:space="preserve">
+                                            <polygon
+                                                points="500,23 655,340 1000,388 750,635 810,980 500,810 190,980 250,635 0,388 345,340" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="post-cell">
+                                <section class="post-text markdown">I know that in bash terminals a reliable way to
+change
+color is using ANSI escape sequences. For example:
+`code`
+```
+echo -e "\033[0;31mbrown text\033[0;00m"
+should output
+```
+brown text (in brown)
+Is there a way to output color using a specific RGB set with ANSI? Say I want bright
+red:
+```
+echo -e "**\033[255:0:0m**red text\033[0;00m"
+```
+Does this sort of thing exist?
+I just want to use standard bash.</section>
+                                <div class="question-marks-block">
+                                    <div class="question-tags">
+                                        <a href="#" class="btn-tag">html</a>
+                                        <a href="#" class="btn-tag">css</a>
+                                        <a href="#" class="btn-tag">golang</a>
+                                    </div>
+                                    <div class="question-user">
+                                        <a class="user-avatar" href="user.html"><img src="static/img/avatar.jpeg"
+                                                alt="user-avatar">
+                                        </a>
+                                        <div class="user-details">
+                                            <a class="linked-text" href="user.html">Dias Kappassov</a>
+                                            <div class="user-action-time">asked <span title="2021.12.03 20:20:52"
+                                                    class="relativetime">1 mins ago</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- COMMENTS -->
+                                <div class="comments">
+                                    <!-- COMMENT LAYOUT -->
+                                    <div class="comment-layout">
+                                        <div class="vote-cell fnt-gray">4</div>
+                                        <div class="comment-cell">
+                                            <pre
+                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                            <div class="comment-details">
+                                                <a class="fnt-link" href="#">t.pimentel</a>
+                                                <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- COMMENT LAYOUT -->
+                                    <div class="comment-layout">
+                                        <div class="vote-cell fnt-gray">4</div>
+                                        <div class="comment-cell">
+                                            <pre
+                                                class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                            <div class="comment-details">
+                                                <a class="fnt-link" href="#">t.pimentel</a>
+                                                <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ADD COMMENT -->
+                                    <button class="btn-nostyle btn--small fnt-gray">Add comment</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ANSWERS -->
+                        <div class="answers">
+                            <div class="answers-header">
+                                <div class="main-subtitle">100 Answers</div>
+                                <div class="content-filter-block ml-auto">
+                                    <div class="btn-group">
+                                        <input type="radio" name="sort" value="Votes" class="d-none" id="rb_sortVotes"
+                                            checked>
+                                        <label class="btn btn--normal" for="rb_sortVotes">Votes</label>
+                                        <input type="radio" name="sort" value="Oldest" class="d-none"
+                                            id="rb_sortOldest">
+                                        <label class="btn btn--normal" for="rb_sortOldest">Oldest</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PAGINATION -->
+                            <div class="paginaton-block mr-auto">
+                                <div class="btn btn--small">prev</div>
+                                <div class="btn btn--small">1</div>
+                                <div class="pagination-dots">...</div>
+                                <div class="btn btn--small">3</div>
+                                <div class="btn btn--small">4</div>
+                                <div class="btn btn--small btn--selected">5</div>
+                                <div class="btn btn--small">6</div>
+                                <div class="btn btn--small">7</div>
+                                <div class="pagination-dots">...</div>
+                                <div class="btn btn--small">2021</div>
+                                <div class="btn btn--small">next</div>
+                            </div>
+                            <div class="answers-block">
+                                <div class="answer-layout">
+                                    <div class="vote-cell">
+                                        <div class="post-btns-group">
+                                            <button class="btn-nostyle btn-vote active">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 1000 1000" style="
+                    fill: inherit;
+                    stroke: inherit;
+                    stroke-width: 100px;" xml:space="preserve">
+                                                    <polygon points="500,400 100,800 900,800" />
+                                                </svg>
+                                            </button>
+                                            <div class="vote-text">
+                                                11818
+                                            </div>
+                                            <button class="btn-nostyle btn-vote">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 1000 1000" style="
+                    fill: inherit;
+                    stroke: inherit;
+                    stroke-width: 100px;" xml:space="preserve">
+                                                    <polygon points="500,600 100,200 900,200" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="post-cell">
+                                        <section class="post-text markdown">
+Markdown Cheatsheet<a name="TOP"></a>
+===================
+
+- - - - 
+# Heading 1 #
+
+    Markup :  # Heading 1 #
+
+    -OR-
+
+    Markup :  ============= (below H1 text)
+
+## Heading 2 ##
+
+    Markup :  ## Heading 2 ##
+
+    -OR-
+
+    Markup: --------------- (below H2 text)
+
+### Heading 3 ###
+
+    Markup :  ### Heading 3 ###
+
+#### Heading 4 ####
+
+    Markup :  #### Heading 4 ####
+
+
+Common text
+
+    Markup :  Common text
+
+_Emphasized text_
+
+    Markup :  _Emphasized text_ or *Emphasized text*
+
+~~Strikethrough text~~
+
+    Markup :  ~~Strikethrough text~~
+
+__Strong text__
+
+    Markup :  __Strong text__ or **Strong text**
+
+___Strong emphasized text___
+
+    Markup :  ___Strong emphasized text___ or ***Strong emphasized text***
+
+[Named Link](http://www.google.fr/ "Named link title") and http://www.google.fr/ or <http://example.com/>
+
+    Markup :  [Named Link](http://www.google.fr/ "Named link title") and http://www.google.fr/ or <http://example.com/>
+
+[heading-1](#heading-1 "Goto heading-1")
+    
+    Markup: [heading-1](#heading-1 "Goto heading-1")
+
+Table, like this one :
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+```
+
+Adding a pipe `|` in a cell :
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | \|
+
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  |  \| 
+```
+
+Left, right and center aligned table
+
+Left aligned Header | Right aligned Header | Center aligned Header
+| :--- | ---: | :---:
+Content Cell  | Content Cell | Content Cell
+Content Cell  | Content Cell | Content Cell
+
+```
+Left aligned Header | Right aligned Header | Center aligned Header
+| :--- | ---: | :---:
+Content Cell  | Content Cell | Content Cell
+Content Cell  | Content Cell | Content Cell
+```
+
+`code()`
+
+    Markup :  `code()`
+
+```javascript
+    var specificLanguage_code = 
+    {
+        "data": {
+            "lookedUpPlatform": 1,
+            "query": "Kasabian+Test+Transmission",
+            "lookedUpItem": {
+                "name": "Test Transmission",
+                "artist": "Kasabian",
+                "album": "Kasabian",
+                "picture": null,
+                "link": "http://open.spotify.com/track/5jhJur5n4fasblLSCOcrTp"
+            }
+        }
+    }
+```
+
+    Markup : ```javascript
+             ```
+
+* Bullet list
+    * Nested bullet
+        * Sub-nested bullet etc
+* Bullet list item 2
+
+~~~
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+
+-OR-
+
+ Markup : - Bullet list
+              - Nested bullet
+                  - Sub-nested bullet etc
+          - Bullet list item 2 
+~~~
+
+1. A numbered list
+    1. A nested numbered list
+    2. Which is numbered
+2. Which is numbered
+
+~~~
+ Markup : 1. A numbered list
+              1. A nested numbered list
+              2. Which is numbered
+          2. Which is numbered
+~~~
+
+- [ ] An uncompleted task
+- [x] A completed task
+
+~~~
+ Markup : - [ ] An uncompleted task
+          - [x] A completed task
+~~~
+
+- [ ] An uncompleted task
+    - [ ] A subtask
+
+~~~
+ Markup : - [ ] An uncompleted task
+              - [ ] A subtask
+~~~
+
+> Blockquote
+>> Nested blockquote
+
+    Markup :  > Blockquote
+              >> Nested Blockquote
+
+_Horizontal line :_
+- - - -
+
+    Markup :  - - - -
+
+_Image with alt :_
+
+![picture alt](http://via.placeholder.com/200x150 "Title is optional")
+
+    Markup : ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
+
+Foldable text:
+
+<details>
+  <summary>Title 1</summary>
+  <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+</details>
+<details>
+  <summary>Title 2</summary>
+  <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
+</details>
+
+    Markup : <details>
+               <summary>Title 1</summary>
+               <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+             </details>
+
+```html
+<h3>HTML</h3>
+<p> Some HTML code here </p>
+```
+
+Link to a specific part of the page:
+
+[Go To TOP](#TOP)
+   
+    Markup : [text goes here](#section_name)
+              section_title<a name="section_name"></a>    
+
+Hotkey:
+
+<kbd>⌘F</kbd>
+
+<kbd>⇧⌘F</kbd>
+
+    Markup : <kbd>⌘F</kbd>
+
+Hotkey list:
+
+| Key | Symbol |
+| --- | --- |
+| Option | ⌥ |
+| Control | ⌃ |
+| Command | ⌘ |
+| Shift | ⇧ |
+| Caps Lock | ⇪ |
+| Tab | ⇥ |
+| Esc | ⎋ |
+| Power | ⌽ |
+| Return | ↩ |
+| Delete | ⌫ |
+| Up | ↑ |
+| Down | ↓ |
+| Left | ← |
+| Right | → |
+
+Emoji:
+
+:exclamation: Use emoji icons to enhance text. :+1:  Look up emoji codes at [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/)
+
+    Markup : Code appears between colons :EMOJICODE:
+</section>
+                                        <div class="question-marks-block">
+                                            <div class="question-tags">
+                                                <a href="#" class="btn-tag">html</a>
+                                                <a href="#" class="btn-tag">css</a>
+                                                <a href="#" class="btn-tag">golang</a>
+
+                                            </div>
+                                            <div class="question-user">
+                                                <a class="user-avatar" href="user.html"><img
+                                                        src="static/img/avatar.jpeg" alt="user-avatar">
+                                                </a>
+                                                <div class="user-details">
+                                                    <a class="linked-text" href="user.html">Dias Kappassov</a>
+                                                    <div class="user-action-time">asked <span
+                                                            title="2021.12.03 20:20:52" class="relativetime">1 mins
+                                                            ago</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- COMMENTS -->
+                                        <div class="comments">
+                                            <!-- COMMENT LAYOUT -->
+                                            <div class="comment-layout">
+                                                <div class="vote-cell fnt-gray">4</div>
+                                                <div class="comment-cell">
+                                                    <pre
+                                                        class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                                    <div class="comment-details">
+                                                        <a class="fnt-link" href="#">t.pimentel</a>
+                                                        <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- COMMENT LAYOUT -->
+                                            <div class="comment-layout">
+                                                <div class="vote-cell fnt-gray">4</div>
+                                                <div class="comment-cell">
+                                                    <pre
+                                                        class="comment-text">Wikipedia has a good article on ANSI escape codes! But, though they say there's a way to generate RGB colored output (\033[38;2;r;g;bm), I can't seem to make it work in my gnome-terminal.</pre>
+                                                    <div class="comment-details">
+                                                        <a class="fnt-link" href="#">t.pimentel</a>
+                                                        <span class="fnt-gray">Aug 27 '14 at 14:47</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ADD COMMENT -->
+                                            <button class="btn-nostyle btn--small fnt-gray">Add comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="paginaton-block mr-auto mt-12">
+                                    <div class="btn btn--small">prev</div>
+                                    <div class="btn btn--small">1</div>
+                                    <div class="pagination-dots">...</div>
+                                    <div class="btn btn--small">3</div>
+                                    <div class="btn btn--small">4</div>
+                                    <div class="btn btn--small btn--selected">5</div>
+                                    <div class="btn btn--small">6</div>
+                                    <div class="btn btn--small">7</div>
+                                    <div class="pagination-dots">...</div>
+                                    <div class="btn btn--small">2021</div>
+                                    <div class="btn btn--small">next</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-sidebar">
+                        <div class="content-sidebar-subblock">
+                            <h4 class="content-sidebar-title">Related Tags</h4>
+                            <div class="tag-line"><a href="#" class="btn-tag">html</a><span>× 51</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">css</a><span>× 50</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">golang</a><span>× 30</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">c#</a><span>× 19</span></div>
+                            <div class="tag-line"><a href="#" class="btn-tag">alem</a><span>× 1</span></div>
+                        </div>
+                        <div class="content-sidebar-subblock">
+                            <h4 class="content-sidebar-title">Hot Questions</h4>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Lorem
+                                ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Lorem
+                                ipsum dolor, sit amet consectetur adipisicing elit. Possimus voluptatibus consequatur
+                                consectetur error hic in, officia tempore placeat magnam perspiciatis aut vitae animi
+                                nihil,
+                                harum omnis iure explicabo facere voluptates.</a>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Repellat,
+                                libero accusantium veniam incidunt corporis laudantium
+                                nostrum tempora fugiat sequi unde aliquam delectus ducimus nobis voluptate sed excepturi
+                                quaerat neque. Nemo.</a>
+                            <a href="#" class="linked-text w-100 mb-rem-half" data-limit-lines-on
+                                data-limit-lines="2">Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. At, quia porro. Praesentium odio unde
+                                officia odit incidunt voluptate in totam. Nemo officia facere tempore quidem,
+                                voluptatibus
+                                unde voluptate cupiditate? Consequatur.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="container footer">
+            <p class="footer-text">2021 | by <a class="footer-text-link" target="_blank"
+                    href="https://github.com/Dias1c">Dias1c</a> & <a class="footer-text-link" target="_blank"
+                    href="https://github.com/RaevNur">nrblzn</a> | Project <a class="footer-text-link" target="_blank"
+                    href="#">here</a></p>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="static/js/header.js"></script>
+    <script src="static/js/showdown.js"></script>
+    <script src="static/js/question.js"></script>
+</body>
+
+</html>
